@@ -1,0 +1,132 @@
+﻿import { motion } from "framer-motion";
+import { ArrowUpRight, Github, ExternalLink } from "lucide-react";
+
+const projects = [
+  {
+    number: "01",
+    name: "TripWise",
+    category: "FULL STACK DEVELOPMENT",
+    description:
+      "A smart travel planning platform designed to help users organize trips through an interactive interface and a Java-based backend.",
+    technologies: [
+      "React",
+      "Java 21",
+      "Spring Boot",
+      "PostgreSQL",
+      "Spring Security",
+      "Docker",
+      "Azure",
+    ],
+    status: "In Development",
+    featured: true,
+    github: "https://github.com/Piyushkumar481",
+  },
+  {
+    number: "02",
+    name: "RetireWell",
+    category: "FULL STACK DEVELOPMENT",
+    description:
+      "A personal finance and retirement planning assistant built to help users explore financial planning through a web application.",
+    technologies: [
+      "React",
+      "Python",
+      "Flask",
+      "SQL",
+      "REST APIs",
+    ],
+    status: "Personal Project",
+    featured: false,
+    github: "https://github.com/Piyushkumar481",
+  },
+  {
+    number: "03",
+    name: "MoodSync",
+    category: "MACHINE LEARNING",
+    description:
+      "A mood-based music recommendation system that uses Spotify data and similarity-based recommendations to suggest songs.",
+    technologies: [
+      "Python",
+      "Flask",
+      "Spotify API",
+      "Pandas",
+      "Scikit-learn",
+    ],
+    status: "Personal Project",
+    featured: false,
+    github: "https://github.com/Piyushkumar481",
+  },
+];
+
+export default function Projects() {
+  return (
+    <section className="projects-section section-padding" id="projects">
+      <div className="section-container">
+        <motion.div
+          className="section-heading"
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <span className="section-eyebrow">SELECTED WORK</span>
+          <h2>
+            Projects I've <span>built.</span>
+          </h2>
+          <p>
+            A selection of applications and experiments where I've put my
+            technical skills into practice.
+          </p>
+        </motion.div>
+
+        <div className="projects-list">
+          {projects.map((project, index) => (
+            <motion.article
+              className={`project-card ${project.featured ? "featured-project" : ""}`}
+              key={project.number}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.12 }}
+            >
+              <div className="project-number">{project.number}</div>
+
+              <div className="project-content">
+                <div className="project-meta">
+                  <span>{project.category}</span>
+                  <span className="project-status">{project.status}</span>
+                </div>
+
+                <h3>{project.name}</h3>
+                <p className="project-description">
+                  {project.description}
+                </p>
+
+                <div className="project-technologies">
+                  {project.technologies.map((technology) => (
+                    <span key={technology}>{technology}</span>
+                  ))}
+                </div>
+
+                <div className="project-links">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <Github size={17} />
+                    GitHub Profile
+                    <ArrowUpRight size={15} />
+                  </a>
+                </div>
+              </div>
+
+              <div className="project-decoration">
+                <span>{project.name.charAt(0)}</span>
+                <ExternalLink size={22} />
+              </div>
+            </motion.article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

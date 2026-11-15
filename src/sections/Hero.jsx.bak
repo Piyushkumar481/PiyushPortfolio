@@ -1,0 +1,162 @@
+﻿import { motion } from "framer-motion";
+
+import {
+  ArrowDown,
+  ArrowUpRight,
+  Github,
+  Linkedin,
+  Code2,
+  Sparkles,
+} from "lucide-react";
+
+function Hero() {
+  return (
+    <section className="hero" id="home">
+      <div className="hero-container">
+        <motion.div
+          className="hero-content"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="hero-status">
+            <span className="status-dot"></span>
+            Available for opportunities
+          </div>
+
+          <p className="hero-greeting">Hello, I'm</p>
+
+          <h1>
+            Piyush
+            <br />
+            <span>Kumar.</span>
+          </h1>
+
+          <h2>
+            Software Developer <span>&</span> Problem Solver
+          </h2>
+
+          <p className="hero-description">
+            A Computer Science graduate passionate about building practical
+            software solutions, exploring new technologies, and turning
+            complex problems into clean, useful applications.
+          </p>
+
+          <div className="hero-actions">
+            <a href="#projects" className="btn-primary">
+              Explore my work <ArrowUpRight size={18} />
+            </a>
+
+            <a href="#contact" className="btn-secondary">
+              Let's connect
+            </a>
+          </div>
+
+          <div className="hero-socials">
+            <a
+              href="https://github.com/Piyushkumar481"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub"
+            >
+              <span className="brand-icon">GH</span>
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/piyush-kumar-8539a9258/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn"
+            >
+              <span className="brand-icon">in</span>
+            </a>
+
+            <span className="social-divider"></span>
+            <span className="hero-location">Based in India</span>
+          </div>
+        </motion.div>
+
+        <motion.div
+          className="hero-visual"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.9, delay: 0.2 }}
+        >
+          <div className="hero-glow"></div>
+
+          <div className="code-card">
+            <div className="code-card-header">
+              <div className="window-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <span>developer.js</span>
+              <Code2 size={16} />
+            </div>
+
+            <div className="code-content">
+              <p><span className="code-purple">const</span> developer = {"{"}</p>
+              <p className="code-indent">
+                name: <span className="code-green">"Piyush Kumar"</span>,
+              </p>
+              <p className="code-indent">
+                education: <span className="code-green">"B.Tech IT"</span>,
+              </p>
+              <p className="code-indent">
+                university: <span className="code-green">"KIIT"</span>,
+              </p>
+              <p className="code-indent">
+                languages: [
+              </p>
+              <p className="code-indent code-indent-more">
+                <span className="code-green">"Java"</span>,
+                <span className="code-green"> "Python"</span>,
+              </p>
+              <p className="code-indent code-indent-more">
+                <span className="code-green">"JavaScript"</span>
+              </p>
+              <p className="code-indent">],</p>
+              <p className="code-indent">
+                focus: <span className="code-green">"Building"</span>,
+              </p>
+              <p className="code-indent">
+                learning: <span className="code-green">"Always"</span>
+              </p>
+              <p>{"};"}</p>
+              <br />
+              <p>
+                <span className="code-purple">console</span>.
+                <span className="code-blue">log</span>(
+              </p>
+              <p className="code-indent">
+                <span className="code-green">"Let's build something."</span>
+              </p>
+              <p>);</p>
+            </div>
+          </div>
+
+          <div className="floating-badge badge-top">
+            <Sparkles size={16} />
+            <span>Always learning</span>
+          </div>
+
+          <div className="floating-badge badge-bottom">
+            <Code2 size={16} />
+            <span>Clean code, real impact</span>
+          </div>
+        </motion.div>
+      </div>
+
+      <a href="#about" className="scroll-indicator">
+        <span>Scroll to explore</span>
+        <ArrowDown size={16} />
+      </a>
+    </section>
+  );
+}
+
+export default Hero;
+
+
+

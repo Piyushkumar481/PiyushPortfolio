@@ -1,0 +1,75 @@
+﻿import { useState } from "react";
+import { Menu, X } from "lucide-react";
+
+
+const navLinks = [
+  { name: "Home", href: "#home" },
+  { name: "About", href: "#about" },
+  { name: "Skills", href: "#skills" },
+  { name: "Projects", href: "#projects" },
+  { name: "Open Source", href: "#opensource" },
+  { name: "Contact", href: "#contact" },
+];
+
+export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  return (
+    <header className="navbar">
+      <div className="nav-container">
+        <a href="#home" className="nav-logo">
+          PK<span>.</span>
+        </a>
+
+        <nav className={menuOpen ? "nav-links active" : "nav-links"}>
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              onClick={() => setMenuOpen(false)}
+            >
+              {link.name}
+            </a>
+          ))}
+        </nav>
+
+        <div className="nav-right">
+          <a
+            href="https://github.com/Piyushkumar481"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="GitHub"
+            className="nav-social"
+          >
+            <span className="brand-icon">GH</span>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/piyush-kumar-8539a9258/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="LinkedIn"
+            className="nav-social"
+          >
+            <span className="brand-icon">in</span>
+          </a>
+
+          <a href="#contact" className="nav-contact">
+            Let's Talk <span>↗</span>
+          </a>
+
+          <button
+            className="menu-toggle"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle navigation"
+          >
+            {menuOpen ? <X /> : <Menu />}
+          </button>
+        </div>
+      </div>
+    </header>
+  );
+}
+
+
+
