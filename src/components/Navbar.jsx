@@ -7,6 +7,7 @@ const navLinks = [
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
   { name: "Open Source", href: "#opensource" },
+  { name: "Experience", href: "#experience" },
   { name: "Education", href: "#education" },
   { name: "Resume", href: "#resume" },
   { name: "Contact", href: "#contact" },
@@ -90,4 +91,5 @@ export default function Navbar() {
     </header>
   );
 }
+
 
