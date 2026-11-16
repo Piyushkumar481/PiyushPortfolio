@@ -2,7 +2,7 @@
 import { Download, Eye, FileText } from "lucide-react";
 
 export default function Resume() {
-  const resumePath = "/resume/Piyush_Kumar_Resume.pdf";
+  const resumePath = `${import.meta.env.BASE_URL}resume/Piyush_Kumar_Resume.pdf`;
 
   return (
     <section className="resume-section" id="resume">
